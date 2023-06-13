@@ -25,7 +25,6 @@ from esphome.const import (
     UNIT_VOLT,
     UNIT_WATT,
     UNIT_WATT_HOURS,
-    UNIT_KILO_WATT_HOURS,
 )
 
 from . import CONF_VICTRON_ID, VictronComponent
@@ -437,14 +436,14 @@ CONFIG_SCHEMA = cv.Schema(
             device_class=DEVICE_CLASS_VOLTAGE,
         ),
         cv.Optional(CONF_AMOUNT_OF_DISCHARGED_ENERGY): sensor.sensor_schema(
-            unit_of_measurement=UNIT_KILO_WATT_HOURS,
+            unit_of_measurement=UNIT_WATT_HOURS,
             icon=ICON_POWER,
             accuracy_decimals=2,
             device_class=DEVICE_CLASS_ENERGY,
             state_class=STATE_CLASS_TOTAL_INCREASING,
         ),
         cv.Optional(CONF_AMOUNT_OF_CHARGED_ENERGY): sensor.sensor_schema(
-            unit_of_measurement=UNIT_KILO_WATT_HOURS,
+            unit_of_measurement=UNIT_WATT_HOURS,
             icon=ICON_POWER,
             accuracy_decimals=2,
             device_class=DEVICE_CLASS_ENERGY,
